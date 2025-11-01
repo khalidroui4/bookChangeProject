@@ -1,0 +1,341 @@
+
+a, button, .btn, .card, .nav-link, img {
+    transition: all 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+
+.btn:not(.dropdown-toggle) {
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    transform: translateY(0);
+}
+
+.btn:not(.dropdown-toggle):hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
+}
+
+.btn:not(.dropdown-toggle):active {
+    transform: translateY(0);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1) !important;
+}
+
+.btn:not(.dropdown-toggle)::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.3);
+    transform: translate(-50%, -50%);
+    transition: width 0.6s, height 0.6s;
+}
+
+.btn:not(.dropdown-toggle):active::after {
+    width: 300px;
+    height: 300px;
+}
+
+.dropdown-toggle {
+    transition: none !important;
+    transform: none !important;
+}
+
+.dropdown-toggle:hover,
+.dropdown-toggle:active,
+.dropdown-toggle:focus {
+    transform: none !important;
+    box-shadow: none !important;
+}
+
+.dropdown-toggle::after {
+    transition: none !important;
+    display: inline-block !important;
+    margin-left: 0.5em !important;
+    vertical-align: middle !important;
+    content: "" !important;
+    border-top: 0.3em solid !important;
+    border-right: 0.3em solid transparent !important;
+    border-bottom: 0 !important;
+    border-left: 0.3em solid transparent !important;
+}
+
+
+
+.card {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    transform: translateY(0);
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15) !important;
+}
+
+.books,
+[class*="col-"] .card {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.books:hover,
+[class*="col-"] .card:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 12px 24px rgba(59, 79, 161, 0.2) !important;
+}
+
+.card img,
+.books img {
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card:hover img,
+.books:hover img {
+    transform: scale(1.05);
+}
+
+
+.nav-link {
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.nav-link:hover {
+    transform: translateY(-2px);
+}
+
+.nav-link::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: #3B4FA1;
+    transform: translateX(-50%);
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover::before {
+    width: 80%;
+}
+
+.nav-link.active::before {
+    width: 80%;
+}
+
+
+
+@keyframes modalSlideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-50px) scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+@keyframes modalFadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.modal.show .modal-dialog {
+    animation: modalSlideIn 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal.show {
+    animation: modalFadeIn 0.3s ease;
+}
+
+.modal-backdrop.show {
+    animation: modalFadeIn 0.3s ease;
+}
+
+
+
+input, textarea, select, .custom-dropdown-toggle {
+    transition: all 0.3s ease;
+}
+
+input:focus, textarea:focus, select:focus, .custom-dropdown-toggle:focus,
+.custom-dropdown-toggle.active {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(59, 79, 161, 0.15) !important;
+}
+
+
+.badge {
+    transition: all 0.3s ease;
+}
+
+.badge:hover {
+    transform: scale(1.05);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.spinner-border {
+    animation: spin 0.75s linear infinite;
+}
+
+
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(100%);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideOutRight {
+    from {
+        opacity: 1;
+        transform: translateX(0);
+    }
+    to {
+        opacity: 0;
+        transform: translateX(100%);
+    }
+}
+
+.toast-notification {
+    animation: slideInRight 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.toast-notification.hiding {
+    animation: slideOutRight 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+
+
+.stat-value, .counter {
+    display: inline-block;
+}
+
+
+
+img {
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.card:hover img,
+.books:hover img {
+    filter: brightness(1.05);
+}
+
+
+.contact, .table-row {
+    transition: all 0.2s ease;
+}
+
+.contact:hover, .table-row:hover {
+    background-color: #f8f9fa;
+    transform: translateX(5px);
+}
+
+
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+}
+
+.stat-card:hover {
+    animation: pulse 0.6s ease;
+}
+
+
+.search-bar, .search-input {
+    transition: all 0.3s ease;
+}
+
+.search-bar:focus-within,
+.search-input:focus {
+    box-shadow: 0 4px 16px rgba(59, 79, 161, 0.15) !important;
+    transform: translateY(-2px);
+}
+
+
+svg {
+    transition: transform 0.3s ease;
+}
+
+.btn:hover svg,
+.nav-link:hover svg {
+    transform: scale(1.1);
+}
+
+
+.custom-dropdown-menu {
+    animation: fadeIn 0.2s ease;
+}
+
+.custom-dropdown-arrow {
+    transition: transform 0.3s ease;
+}
+
+.custom-dropdown-toggle.active .custom-dropdown-arrow {
+    transform: rotate(180deg);
+}
+
+
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+@media (max-width: 768px) {
+    .card:hover,
+    .books:hover {
+        transform: translateY(-4px) scale(1.01);
+    }
+    
+    .btn:hover {
+        transform: translateY(-1px);
+    }
+}
+

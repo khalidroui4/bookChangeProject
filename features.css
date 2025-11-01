@@ -1,0 +1,172 @@
+
+.share-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.recent-views-section {
+    background: white;
+    padding: 2rem;
+    border-radius: 12px;
+    margin-bottom: 2rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.recent-views-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.recent-view-item {
+    position: relative;
+    border-radius: 8px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.recent-view-item:hover {
+    transform: scale(1.05);
+}
+
+.recent-view-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.recent-view-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+    color: white;
+    padding: 0.75rem;
+    font-size: 0.875rem;
+}
+
+
+.rating-stars {
+    display: inline-flex;
+    gap: 0.25rem;
+}
+
+.rating-stars span {
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.rating-stars span:hover {
+    transform: scale(1.2);
+}
+
+.rating-display {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1rem;
+    color: #fbbf24;
+}
+
+.rating-count {
+    color: #6b7280;
+    font-size: 0.875rem;
+}
+
+.review-card {
+    background: #f9fafb;
+    padding: 1rem;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+}
+
+.review-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.5rem;
+}
+
+.reviewer-name {
+    font-weight: 600;
+    color: #374151;
+}
+
+.review-date {
+    font-size: 0.75rem;
+    color: #9ca3af;
+}
+
+.review-text {
+    color: #6b7280;
+    font-size: 0.875rem;
+}
+
+
+.calendar-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    background: #dcfce7;
+    color: #166534;
+    border-radius: 6px;
+    font-size: 0.875rem;
+    font-weight: 500;
+}
+
+.calendar-badge.unavailable {
+    background: #fee2e2;
+    color: #991b1b;
+}
+
+.date-picker-container {
+    display: flex;
+    gap: 1rem;
+    margin: 1rem 0;
+}
+
+.date-input {
+    flex: 1;
+}
+
+.reserved-dates-list {
+    background: #f9fafb;
+    padding: 1rem;
+    border-radius: 8px;
+    margin-top: 1rem;
+}
+
+.reserved-date-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.75rem;
+    background: white;
+    border-radius: 6px;
+    margin-bottom: 0.5rem;
+}
+
+@media (max-width: 768px) {
+    .recent-views-grid {
+        grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    }
+    
+    .recent-view-item img {
+        height: 150px;
+    }
+}
+
+@media (max-width: 576px) {
+    .recent-views-section {
+        padding: 1rem;
+    }
+    
+    .recent-views-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+

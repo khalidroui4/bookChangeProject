@@ -1,0 +1,28 @@
+# Protect sensitive files from direct access
+<Files "config.php">
+    Order allow,deny
+    Deny from all
+</Files>
+
+# Prevent directory listing
+Options -Indexes
+
+# Protect .htaccess itself
+<Files ".htaccess">
+    Order allow,deny
+    Deny from all
+</Files>
+
+# Prevent access to backup files
+<FilesMatch "\.(bak|backup|sql|log|old)$">
+    Order allow,deny
+    Deny from all
+</FilesMatch>
+
+# Additional security headers
+<IfModule mod_headers.c>
+    Header set X-Content-Type-Options "nosniff"
+    Header set X-Frame-Options "SAMEORIGIN"
+    Header set X-XSS-Protection "1; mode=block"
+</IfModule>
+
